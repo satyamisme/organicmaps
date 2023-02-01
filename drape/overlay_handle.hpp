@@ -165,7 +165,7 @@ public:
   bool IsReady() const { return m_isReady; }
 
   void SetDisplayFlag(bool display) { m_displayFlag = display; }
-  bool GetDisplayFlag() const { return m_displayFlag; }
+  bool GetDisplayFlag() const { return true; } // @todo Remove all displayFlag logic as its not used anymore.
 
   void SetSpecialLayerOverlay(bool isSpecialLayerOverlay) { m_isSpecialLayerOverlay = isSpecialLayerOverlay; }
   bool IsSpecialLayerOverlay() const { return m_isSpecialLayerOverlay; }

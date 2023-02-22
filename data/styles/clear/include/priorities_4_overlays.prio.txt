@@ -468,7 +468,7 @@ man_made-water_well                                 # icon z15-
 waterway-weir                                       # pathtext z15- (also has line z14-)
 === 1390
 
-isoline-step_100                                    # pathtext z15- (also has line z13-)
+isoline-step_100                                    # pathtext z14- (also has line z12-)
 === 1340
 
 man_made-flagpole                                   # icon z15-
@@ -1081,7 +1081,7 @@ leisure-golf_course                                 # caption z17- and icon z17-
 === 440
 
 isoline-step_10                                     # pathtext z17- (also has line z15-)
-isoline-step_50                                     # pathtext z17- (also has line z15-)
+isoline-step_50                                     # pathtext z16- (also has line z14-)
 isoline-zero                                        # pathtext z17- (also has line z15-)
 === 430
 

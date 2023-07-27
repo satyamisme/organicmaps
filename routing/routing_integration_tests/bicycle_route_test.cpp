@@ -136,12 +136,13 @@ UNIT_TEST(CrossMwmKaliningradRegionToLiepaja)
       mercator::FromLatLon(54.63519, 21.80749), {0., 0.},
       mercator::FromLatLon(56.51119, 21.01847), 271237);
 
-  // Valhalla makes the same route, but GraphHopper makes a detour (via unpaved):
+  // Same as GraphHopper makes a detour (via unpaved), OSRM goes straight with highway=primary.
   // https://www.openstreetmap.org/directions?engine=graphhopper_bicycle&route=55.340%2C21.459%3B55.715%2C21.135
+  // User says that GraphHopper is the best option.
   integration::CalculateRouteAndTestRouteLength(
       integration::GetVehicleComponents(VehicleType::Bicycle),
       mercator::FromLatLon(55.3405073, 21.4595925), {0., 0.},
-      mercator::FromLatLon(55.7140174, 21.1365445), 57180.3);
+      mercator::FromLatLon(55.7140174, 21.1365445), 64134.8);
 }
 
 // Test on riding up from Adeje (sea level) to Vilaflor (altitude 1400 meters).
@@ -257,6 +258,15 @@ UNIT_TEST(Finland_Use_Tertiary_LowTraffic)
   CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
       mercator::FromLatLon(61.5445696, 23.9394003), {0.0, 0.0},
       mercator::FromLatLon(61.6153965, 23.876755), 9876.65 /* expectedRouteMeters */);
+}
+
+UNIT_TEST(Stolbcy_Use_Unpaved)
+{
+  // Same as GraphHopper. Valhalla uses ground path through ford.
+  // OSRM makes completely strange route.
+  CalculateRouteAndTestRouteLength(GetVehicleComponents(VehicleType::Bicycle),
+      mercator::FromLatLon(53.471389, 26.7422186), {0.0, 0.0},
+      mercator::FromLatLon(53.454082, 26.7560061), 5148.45 /* expectedRouteMeters */);
 }
 
 } // namespace bicycle_route_test

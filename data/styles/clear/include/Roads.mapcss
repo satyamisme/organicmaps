@@ -97,7 +97,6 @@ line[piste:type=downhill][piste:difficulty=novice],
 {z-index: 100;}
 
 line[route=ferry],
-line[route=ferry_motorcar]
 {z-index: 115;}
 
 line[piste:type=downhill],
@@ -1572,6 +1571,5 @@ line|z17-[leisure=skiing]
 {width: 1.5;}
 
 /* 11. FERRY */
-line|z10-[route=ferry],
-line|z10-[route=ferry_motorcar]
+line|z7-[route=ferry],
 {color: @ferry;width: 1;opacity: 1;dashes: 5.4,2.7;}
